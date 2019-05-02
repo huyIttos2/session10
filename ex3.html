@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function demSoTu(str) {
+            let count = 1;
+            for (let i = 0; i < (str.length - 1); i++) {
+
+                if (str[i] === '' && str[i + 1] !== ' ') {
+                    count += count +1;
+                }
+            }
+            return count;
+    }
+
+    let str1 = "Hom nay la mot ngay ma toi da giac ngo ra duoc nhieu dieu";
+    let kq = demSoTu(str1);
+    console.log(kq);
+</script>
+</body>
+</html>

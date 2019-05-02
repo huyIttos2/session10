@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let now = new Date();
+    let dOB= new Date(1995, 11, 7) ;
+   var offset =now.getTime() - dOB.getTime();
+   var totalYears = Math.round(offset/1000/60/60/24/365);
+    var totalDays = Math.round(offset/1000/60/60/24);
+   var totalHours = Math.round(offset/1000/60/60);
+   var totalMinutes = Math.round(offset/1000/60);
+   var totalSeconds = Math.round(offset/1000);
+   console.log("ban da song " + totalYears + " nam");
+   console.log("ban da song " + totalDays + " ngay");
+   console.log("ban da song " + totalHours + " gio");
+   console.log("ban da song " + totalMinutes+ " phut");
+   console.log("ban da song " + totalSeconds + " giay");
+
+</script>
+</body>
+</html>

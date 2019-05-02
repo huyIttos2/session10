@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function dispArr(arr) {
+        for (var i = 0; i < arr.length; ++i) {
+            document.write(arr[i] + " \t");
+            if(i%10==9){
+                document.write("<br/>");
+            }
+        }
+        if(i%10!=0){
+            document.write("<br/>");
+        }
+    };
+        function binSearch(arr, data) {
+            let lowerBound = 0;
+            let upperBound = arr.length - 1;
+            let position = -1;
+            while (lowerBound <= upperBound) {
+                let midPoint = Math.floor((lowerBound + upperBound) / 2);
+                if (arr[midPoint] === data) {
+                    position = midPoint;
+                    break;
+                } else if (arr[midPoint] < data) {
+                    lowerBound = midPoint + 1;
+                } else {
+                    upperBound = midPoint - 1;
+                }
+            }
+            return position;
+        }
+
+    function count(arr, data) {
+        var count = 0;
+        var position = binSearch(arr, data);
+        if (position > -1) {
+            ++count;
+            for (var i = position-1; i > 0; --i) {
+                if (arr[i] == data) {
+                    ++count;
+                }
+                else {
+                    break;
+                }
+            }
+
+            for (var i = position+1; i < arr.length; ++i) {
+                if (arr[i] == data) {
+                    ++count;
+                }
+                else {
+                    break;
+                }
+            }
+        } //end if
+        return count;
+    };
+    var nums = [];
+    for(let i =0; i<100; ++i){
+        nums[i] = Math.floor(Math.random() * 101);
+    };
+    nums.sort();
+    dispArr(nums);
+    document.write("<br/>");
+    var val = parseInt(prompt("Enter a value to count: "));
+    var retVal = count(nums, val);
+    document.write("Found " + retVal + " occurrences of " + val + ".");
+
+</script>
+</body>
+</html>

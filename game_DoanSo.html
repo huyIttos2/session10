@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Enter a number between <strong>0</strong> and <strong>100</strong> and remember your number.</p>
+<p>When ready press "Begin" and the computer will try to find your number.</p>
+<input id="myNumber" style="width: 100px" />
+<button id="guess" onclick="compGuess()">Begin</button>
+
+<script>
+
+    function compGuess()
+    {
+        if (document.getElementById("myNumber").value < 0 || document.getElementById("myNumber").value > 100 )
+        {
+            alert("Please enter a number between 0 and 100.");
+        }
+        else
+        {
+            var start = 0;
+            var stop  = 100;
+            var middle = Math.floor(start + stop / 2);
+            var guess = document.getElementById("myNumber").value;
+
+            if (middle == guess)
+            {
+                alert("Your number is: " + middle);
+            }
+            else
+            {
+                while (start <= stop)
+                {
+                    if (middle < guess)
+                    {
+                        start = middle + 1;
+
+                    }
+                    else if (middle > guess)
+                    {
+                        stop = middle - 1;
+                    }
+                    else
+                    {
+                        alert(middle);
+                    }
+                    alert("Your answer is : " + middle);
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

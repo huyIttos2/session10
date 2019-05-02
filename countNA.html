@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "toi yeu JavaScript";
+    let i =0 ;
+    let vowels = 0;
+    let consonants = 0;
+    for(i =0; i< str.length; i++){
+        if(str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u' )
+            vowels++;
+        else if (str[i] !== ' '){
+            consonants++;
+        }
+    }
+    console.log(vowels);
+    console.log(consonants);
+</script>
+</body>
+</html>

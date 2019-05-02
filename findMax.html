@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function dispArr(arr) {
+        for (let i = 0; i < arr.length; ++i) {
+            document.write(arr[i] + " \t");
+            if(i%10==9){
+                document.write("<br/>");
+            }
+        }
+        if(i%10==0){
+            document.write("<br/>");
+        }
+    };
+    function findMin(arr) {
+        var min = arr[0];
+        for(var i = 1; i < arr.length; i++){
+            if(arr[i] < min){
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+    function findMax(arr) {
+        var max = arr[0];
+        for(var i = 1; i < arr.length; i++){
+            if(arr[i] > max){
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+    var nums = [];
+    for(var i=0;i<100;++i){
+        nums[i] = Math.floor(Math.random() * 101);
+    }
+    var maxValue = findMax(nums);
+    var minValue = findMin(nums);
+    dispArr(nums);
+    document.write("<br/>");
+    document.write("The minimum value is: " + minValue);
+    document.write("<br/>");
+    document.write("The minimum value is: " + maxValue);
+
+</script>
+</body>
+</html>
